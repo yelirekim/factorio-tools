@@ -39,7 +39,7 @@ func validGameDir(path string) bool {
 
 // Look in a bunch of places to try to find the game's directory.
 // If -gamedir was provided, use that.
-func findGameDir() (string, error) {
+func FindGameDir() (string, error) {
 	if *gameDir != "" {
 		if !validGameDir(*gameDir) {
 			return "", errors.New("invalid game dir: " + *gameDir)
@@ -191,7 +191,7 @@ type FactorioData struct {
 }
 
 func LoadData(processDataBox, loaderLibBox packr.Box, verbose bool) (FactorioData, error) {
-	gameDir, err := findGameDir()
+	gameDir, err := FindGameDir()
 	if err != nil {
 		return FactorioData{}, err
 	}

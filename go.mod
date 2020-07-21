@@ -1,5 +1,7 @@
 module github.com/KirkMcDonald/factorio-tools
 
+go 1.14
+
 require (
 	github.com/KirkMcDonald/golua v0.0.0-20181010233838-abfdbd2f7910
 	github.com/gobuffalo/packr v1.13.7
